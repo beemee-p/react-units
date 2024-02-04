@@ -1,9 +1,8 @@
-import App from "App";
 import { ReactElement, lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Graph from "./components/Graph";
+import App from "App";
 
-export const Graph1 = lazy(() => import("./components/Graph"));
+export const GraphWrap = lazy(() => import("./components/graph/GraphWrap"));
 
 const Router = (): ReactElement => {
   const router = createBrowserRouter([
@@ -14,7 +13,7 @@ const Router = (): ReactElement => {
     },
     {
       path: "graph/:id",
-      element: <Graph />,
+      element: <GraphWrap />,
     },
   ]);
 
